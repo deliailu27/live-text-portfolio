@@ -1,45 +1,31 @@
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
+import Project1Image1 from './project1-1.png';
+import Project1Image2 from './project1-2.png';
+import Project2Image1 from './project2-1.png';
+import Project2Image2 from './project2-2.png';
 
 const ProjectShowcase = () => {
-  const [projects, setProjects] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    // Fetch your projects data here
-    const fetchedProjects = [
-      {
-        title: 'Project 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        imageUrl: 'https://via.placeholder.com/300',
-      },
-      {
-        title: 'Project 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        imageUrl: 'https://via.placeholder.com/300',
-      },
-    ];
-    setProjects(fetchedProjects);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [projects]);
-
-  if (!projects.length) {
-    return <p>Loading...</p>;
-  }
-
-  const { title, description, imageUrl } = projects[currentIndex];
-
   return (
-    <section>
-      <img src={imageUrl} alt={title} />
-      <h2>{title}</h2>
-      <p>{description}</p>
-    </section>
+    
+    <div className="project-showcase">
+        
+      <div className="project-showcase-container">
+        <a href="#project1" className="project-image-wrapper">
+          <img src={Project1Image1} alt="Project 1" />
+        </a>
+        <a href="#project2" className="project-image-wrapper">
+          <img src={Project1Image2} alt="Project 2" />
+        </a>
+        
+        <a href="#project2" className="project-image-wrapper">
+          <img src={Project2Image1} alt="Project 2" />
+        </a>
+        <a href="#project2" className="project-image-wrapper">
+          <img src={Project2Image2} alt="Project 2" />
+        </a>
+      </div>
+    </div>
   );
 };
 
