@@ -2,6 +2,7 @@ import React, { useState, useEffect,useRef } from 'react';
 import { getGeneratedTitle } from '../gpt3';
 import About from './About';
 import HeroImage from './background2.avif';
+import Footer from './Footer';
 import ProjectShowcase from './ProjectShowcase';
 
 
@@ -32,11 +33,11 @@ const HomePage = () => {
           style={{ backgroundImage: `url(${HeroImage})` }}
         >
             <div className='hero-h1-wrapper'>
-          <h2 className='hero-h2'>Delia's</h2>
+         
           <h1 className='hero-h1'>{title || "Moral Codes"}</h1>
           </div>
           <div className='homepage-h2-wrapper'>
-          <h3 className='hero-h3'>--- Uniting Ethics and Software Engineering</h3>
+          <h3 className='hero-h3'>  Uniting Ethics and Software Engineering</h3>
           </div>
         </section>
         <section className={`about${triggered ? ' move-up' : ''}`}>
@@ -44,6 +45,7 @@ const HomePage = () => {
         </section>
         <section className="project-showcase-wrapper">
       <ProjectShowcase triggered={triggered} />
+      
         </section>
         
       </div>
