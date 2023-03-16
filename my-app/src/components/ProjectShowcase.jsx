@@ -5,12 +5,13 @@ import Project1Image2 from './project1-2.png';
 import Project2Image1 from './project2-1.png';
 import Project2Image2 from './project2-2.png';
 
-const ProjectShowcase = () => {
+const ProjectShowcase = ({ triggered }) => {
   return (
     
     <div className="project-showcase">
+        <h2 className='project-showcase-title'>Featured Programming Projects</h2>
+       <div className={`project-showcase-container${triggered ? ' move-up' : ''}`}>
         
-      <div className="project-showcase-container">
         <a href="#project1" className="project-image-wrapper">
           <img src={Project1Image1} alt="Project 1" />
         </a>

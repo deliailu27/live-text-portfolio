@@ -1,7 +1,7 @@
 import React, { useState, useEffect,useRef } from 'react';
 import { getGeneratedTitle } from '../gpt3';
 import About from './About';
-import HeroImage from './background.jpg';
+import HeroImage from './background2.avif';
 import ProjectShowcase from './ProjectShowcase';
 
 
@@ -31,16 +31,21 @@ const HomePage = () => {
           className={`homepage-hero${triggered ? ' fade-out' : ''}`}
           style={{ backgroundImage: `url(${HeroImage})` }}
         >
-          <h1>{title || "Welcome to Delia's Portfolio"}</h1>
+            <div className='hero-h1-wrapper'>
+          <h2 className='hero-h2'>Delia's</h2>
+          <h1 className='hero-h1'>{title || "Moral Codes"}</h1>
+          </div>
+          <div className='homepage-h2-wrapper'>
+          <h3 className='hero-h3'>--- Uniting Ethics and Software Engineering</h3>
+          </div>
         </section>
         <section className={`about${triggered ? ' move-up' : ''}`}>
           <About/>
         </section>
-        <section className={`project-showcase${triggered ? ' move-up' : ''}`}>
-        <section className={`project-showcase-wrapper${triggered ? ' move-up' : ''}`}>
-      <ProjectShowcase />
-    </section>
+        <section className="project-showcase-wrapper">
+      <ProjectShowcase triggered={triggered} />
         </section>
+        
       </div>
     );
   };
